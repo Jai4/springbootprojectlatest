@@ -1,9 +1,16 @@
 pipeline {
-     agent any
+    agent {
+        label 'mainmachine'
+    }
+    
      
      stages {
          stage('step one') {
-              sh 'echo "Hello World"'
+
+             steps {
+               sh 'echo "Hello World"'
+            }
+              
          }
      }
 
