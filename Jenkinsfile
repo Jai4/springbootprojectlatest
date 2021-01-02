@@ -11,6 +11,8 @@ pipeline {
                sh 'echo "Hello World"'
                sh 'pwd'
                sh './gradlew build'
+               sh 'docker version'
+               sh 'docker image ls'
             }
               
          }
