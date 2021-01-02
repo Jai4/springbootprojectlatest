@@ -10,6 +10,7 @@ pipeline {
              steps {
                sh 'echo "Hello World"'
                sh 'pwd'
+               sh './gradlew build'
             }
               
          }
