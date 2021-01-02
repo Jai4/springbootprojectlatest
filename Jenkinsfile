@@ -23,8 +23,9 @@ pipeline {
          stage('step two') {
 
              steps {
-             united
-               
+                script{
+                   united
+                  }
              }    
          }
          
