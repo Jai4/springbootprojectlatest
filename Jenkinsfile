@@ -10,7 +10,7 @@ pipeline {
              steps {
                sh 'echo "Hello World"'
                sh 'pwd'
-               sh 'docker run --network host localstack/localstack'
+               sh 'docker run --network host -d localstack/localstack'
                sh './gradlew build'
             }
               
