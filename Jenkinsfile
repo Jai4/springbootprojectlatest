@@ -16,10 +16,19 @@ pipeline {
                sh 'docker run --network host -d localstack/localstack'
                sh './gradlew build'
 
-               united
-            }
-              
+               
+             }  
          }
+              
+         stage('step two') {
+
+             steps {
+             united
+               
+             }    
+         }
+         
+         
      }
 
 
