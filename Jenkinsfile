@@ -1,3 +1,6 @@
+@Library('JenkinsSharedLibLatest') _
+
+
 pipeline {
     agent {
         label 'mainmachine'
@@ -12,6 +15,8 @@ pipeline {
                sh 'pwd'
                sh 'docker run --network host -d localstack/localstack'
                sh './gradlew build'
+
+               united
             }
               
          }
