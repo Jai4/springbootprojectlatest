@@ -13,7 +13,9 @@ pipeline {
                sh 'echo "Hello World"'
                sh 'pwd'
       
-               hello
+               script{
+                   hello
+                  }
             }
 
          }
