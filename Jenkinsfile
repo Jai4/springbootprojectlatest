@@ -1,3 +1,21 @@
-@Library('JenkinsSharedLibLatest') _
+@Library('jenkins-sharedlib') _
 
-united useLocalStack: true
+
+pipeline {
+    agent {
+        label 'mainmachine'
+    }
+    
+     
+     stages {
+         stage('step one') {
+             steps {
+               sh 'echo "Hello World"'
+               sh 'pwd'
+      
+               hello
+            }
+
+         }
+     }
+}
