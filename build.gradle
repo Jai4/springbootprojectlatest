@@ -29,4 +29,5 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+	systemProperty 'container.name', System.getenv('CONTAINER_NAME')
 }
