@@ -7,7 +7,7 @@ provider "aws" {
   skip_metadata_api_check     = true
   skip_requesting_account_id  = true
   endpoints {
-    dynamodb       = "http://localhost:4566"
+    dynamodb       = "http://${var.container_name}:4566"
   }
 }
 
