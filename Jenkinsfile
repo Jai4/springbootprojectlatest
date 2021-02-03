@@ -1,3 +1,3 @@
 @Library('jenkins-sharedlib') _
 
-runSpringTests useLocalStack: true
+runSpringTestsGradle useLocalStack: true
