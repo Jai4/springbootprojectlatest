@@ -18,9 +18,11 @@ public class DynamoDbIntegrationTest {
 
     @BeforeAll
     public static void beforeTest() throws Exception {
+        
+        String name  = System.getProperty("container.name");
 
         dynamoDbClient =   DynamoDbClient.builder()
-                .endpointOverride(new URI("http://localhost:4566"))
+                .endpointOverride(new URI("http://"+ name+":4566"))
                 .region(Region.US_EAST_1)
                 .credentialsProvider(StaticCredentialsProvider.create(AwsBasicCredentials.create("access", "secret")))
                 .build();
@@ -33,7 +35,7 @@ public class DynamoDbIntegrationTest {
         processBuilder.command("terraform", "init");
         processBuilder.start().waitFor();
 
-        processBuilder.command("terraform", "apply", "-auto-approve");
+        processBuilder.command("terraform", "apply", "-auto-approve","-var", "container_name="+name);
         processBuilder.start().waitFor();
 
     }
